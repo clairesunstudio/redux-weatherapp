@@ -13,9 +13,18 @@ export default class SearchBar extends Component {
     this.setState({ term: event.target.value})
   }
 
+  onFormSubmit(event){
+    //prevent default submit
+    //html <form> element by default submits (update page and clears input) whenever input is in focus and enter is hit
+    event.preventDefault();
+
+    //fetch data
+
+  }
+
   render() {
     return (
-      <form className="input-group">
+      <form onSubmit={this.onFormSubmit} className="input-group">
         <input
           type="text"
           placeholder="Search for a city to see weather forcast"
