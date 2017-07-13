@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { fetchWeather } from '../actions/index'
 
-export default class SearchBar extends Component {
+class SearchBar extends Component {
   constructor(props) {
     super(props)
     this.state = { term: ''}
     this.onInputChange = this.onInputChange.bind(this);
+    this.onFormSubmit = this.onFormSubmit.bind(this);
     //binding the Component as the context of `this` to callback function and set the function to this.onInputChange
+
   }
 
   onInputChange(event){
-    console.log(event.target.value)
     this.setState({ term: event.target.value})
   }
 
@@ -17,9 +21,9 @@ export default class SearchBar extends Component {
     //prevent default submit
     //html <form> element by default submits (update page and clears input) whenever input is in focus and enter is hit
     event.preventDefault();
-
+    this.props.fetchWeather(this.state.term)
+    this.setState({ term: ''}) //clears input after submit
     //fetch data
-
   }
 
   render() {
@@ -41,3 +45,11 @@ export default class SearchBar extends Component {
     )
   }
 }
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchWeather }, dispatch)
+}
+//bring in action function as props
+
+export default connect(null,mapDispatchToProps)(SearchBar)
+//null takes the place of mapStateToProps, no global state needs to be passed in
