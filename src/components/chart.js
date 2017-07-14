@@ -7,7 +7,7 @@ const average = data => _.round(_.sum(data)/data.length);
 export default (props) => {
   return (
     <div>
-      <Sparklines svgHeight={100} svgWidth={200} data={props.data}>
+      <Sparklines height={150} width={300} data={props.data}>
         <SparklinesLine color={props.color} />
         <SparklinesReferenceLine type='avg' />
       </Sparklines>
