@@ -1,25 +1,19 @@
-# ReduxSimpleStarter
+# Redux Weather Forcast App
 
-Interested in learning [Redux](https://www.udemy.com/react-redux/)?
+This react redux app allows users to search cities in the U.S. to list the resulting cities 5-day / 3 hour weather forecast using [open weather API](http://openweathermap.org/forecast5)
 
-### Getting Started
-
-There are two methods for getting started with this repo.
-
-#### Familiar with Git?
-Checkout this repo, install dependencies, then start the gulp process with the following:
-
-```
-> git clone https://github.com/StephenGrider/ReduxSimpleStarter.git
-> cd ReduxSimpleStarter
-> npm install
-> npm start
-```
-
-#### Not Familiar with Git?
-Click [here](https://github.com/StephenGrider/ReactStarter/releases) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
+### Run Locally
 
 ```
 > npm install
 > npm start
 ```
+
+
+#### Useful Links
+- data viz: [React Sparklines](http://borisyankov.github.io/react-sparklines/)
+- middleware: [Redux Promise](https://www.npmjs.com/package/redux-promise)
+
+#### Credits
+- boilerplate: [ReduxSimpleStarter](https://github.com/StephenGrider/ReduxSimpleStarter.git)
+- [Redux Course](https://www.udemy.com/react-redux/)
